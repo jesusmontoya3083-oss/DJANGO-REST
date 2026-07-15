@@ -28,11 +28,18 @@ class _LoginPageState extends State<LoginPage>{
       print(respuesta);
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('inicio exitoso')
+        const SnackBar(
+          content: Text('inicio exitoso')
         ),
       );
       //aqui se redirecciona al dashboard o menu
 
-    }catch
+    }catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          context: Text(e.toString())
+        )
+        );
+    }
   }
 }
